@@ -1,0 +1,303 @@
+# **PYTHON BASICS** 
+
+A concise beginner’s guide to writing and understanding Python code 
+
+### **What you’ll learn** 
+
+- How Python code runs and how to use print() 
+
+- Variables, core data types, and type conversion 
+
+- Operators, comparisons, and decision-making 
+
+- Loops, collections, functions, and basic error handling 
+
+**Who this is for:** students and first-time programmers. Examples use Python 3. 
+
+**How to use this guide:** type the examples yourself, run them, then change a value and predict the result before executing the code. 
+
+Learn by doing • Keep examples small • Read error messages carefully 
+
+PYTHON BASICS • BEGINNER GUIDE 
+
+Page 1 of 6 
+
+## **1. Getting Started** 
+
+Python is a high-level, general-purpose programming language known for readable syntax. It is used in scripting, web development, data analysis, automation, and machine learning. 
+
+### **Your first program** 
+
+```
+print("Hello, world!")
+print(2 + 3)
+```
+
+The print() function displays values. Text goes inside quotes; arithmetic expressions can be printed directly. 
+
+### **Comments and indentation** 
+
+```
+# This is a comment
+name = "Asha"  # Store a name
+if name:
+    print("Hello,", name)
+```
+
+A comment starts with # and is ignored by Python. Indentation (usually four spaces) groups statements into blocks. Inconsistent indentation can cause an error. 
+
+### **Reading input** 
+
+```
+name = input("What is your name? ")
+print("Welcome,", name)
+```
+
+input() reads a line from the user and returns it as a string. Convert it when you need a number. 
+
+```
+age_text = input("Age: ")
+age = int(age_text)
+print("Next year:", age + 1)
+```
+
+### **Run Python** 
+
+Install Python 3 from the official Python website, or use a trusted online Python editor. Save a script with a .py extension, such as hello.py, and run it with python hello.py (some systems use python3). 
+
+Tip: Python is case-sensitive: print and Print are different names. 
+
+PYTHON BASICS • BEGINNER GUIDE 
+
+Page 2 of 6 
+
+## **2. Variables, Types, and Operators** 
+
+A variable is a name that refers to a value. Use = to assign a value; you do not need to declare a variable’s type in advance. 
+
+```
+student = "Mina"     # str: text
+score = 92            # int: whole number
+price = 12.50         # float: decimal
+passed = True         # bool: True or False
+nothing = None        # absence of a value
+```
+
+### **Common built-in types** 
+
+**str** — text, such as "Python". **int** — integers, such as 7. **float** — decimal numbers, such as 3.14. **bool** — True or False. **NoneType** — represented by None. 
+
+Check a value with type(value). Convert values with int(), float(), str(), and bool() when appropriate. 
+
+```
+number = int("42")
+measurement = float("2.5")
+label = str(7)
+print(number + 8)       # 50
+```
+
+### **Operators** 
+
+```
+a, b = 10, 3
+print(a + b)   # 13: addition
+print(a - b)   # 7: subtraction
+print(a * b)   # 30: multiplication
+print(a / b)   # 3.333...: true division
+print(a // b)  # 3: floor division
+print(a % b)   # 1: remainder
+print(a ** b)  # 1000: exponent
+```
+
+Comparisons return a Boolean: == equal, != not equal, < less than, > greater than, <= less than or equal, >= greater than or equal. Use == to compare; = assigns. 
+
+```
+age = 18
+print(age >= 18)  # True
+```
+
+Logical operators combine conditions: and (both true), or (at least one true), and not (reverses truth). Use parentheses to make complex conditions easier to read. 
+
+PYTHON BASICS • BEGINNER GUIDE 
+
+Page 3 of 6 
+
+## **3. Decisions and Loops** 
+
+### **if / elif / else** 
+
+```
+temperature = 27
+if temperature >= 30:
+    print("Hot")
+elif temperature >= 20:
+    print("Comfortable")
+else:
+    print("Cool")
+```
+
+Python checks conditions from top to bottom and runs the first matching branch. Finish each condition line with a colon and indent its block. 
+
+### **for loops** 
+
+```
+for number in range(1, 5):
+    print(number)
+```
+
+range(1, 5) produces 1, 2, 3, 4: the stop value is excluded. A for loop iterates over items in a sequence or other iterable. 
+
+### **while loops** 
+
+```
+count = 3
+while count > 0:
+    print(count)
+    count -= 1
+print("Go!")
+```
+
+A while loop repeats while its condition is true. Update the condition’s variables so the loop can finish; otherwise you may create an infinite loop. 
+
+### **Loop controls** 
+
+```
+for n in range(6):
+    if n == 2:
+        continue  # Skip this iteration
+    if n == 5:
+        break     # Stop the loop
+    print(n)
+```
+
+break exits the nearest loop. continue skips to the next iteration. Use loops to avoid repeating nearly identical statements. 
+
+### **Mini exercise** 
+
+Write a loop that prints the even numbers from 2 through 10. Hint: range(2, 11, 2) steps by two. 
+
+PYTHON BASICS • BEGINNER GUIDE 
+
+Page 4 of 6 
+
+## **4. Collections and Functions** 
+
+### **Lists** 
+
+```
+fruits = ["apple", "mango", "pear"]
+print(fruits[0])       # apple (index starts at 0)
+fruits.append("kiwi")
+print(len(fruits))     # 4
+```
+
+Lists are ordered and mutable. Use square brackets for indexing; negative indexes count from the end. An index outside the list raises IndexError. 
+
+### **Tuples, sets, and dictionaries** 
+
+```
+point = (3, 4)  # Tuple: ordered, not mutable
+unique_ids = {10, 11, 10}  # Set: unique items
+person = {"name": "Ravi", "age": 20}
+print(person["name"])  # Ravi
+person["age"] = 21
+```
+
+A tuple is useful for a fixed group of values. A set stores unique items and does not promise positional indexing. A dictionary maps keys to values; keys are commonly strings or numbers. 
+
+### **Functions** 
+
+```
+def greet(name):
+    """Return a greeting for one person."""
+    return f"Hello, {name}!"
+```
+
+```
+message = greet("Lee")
+print(message)
+```
+
+def defines a function. Parameters receive inputs; return sends a result back to the caller. If a function has no return statement, it returns None. The f-string inserts an expression inside braces. 
+
+### **Useful built-ins** 
+
+```
+numbers = [4, 8, 2]
+print(len(numbers))  # 3
+print(sum(numbers))  # 14
+print(min(numbers))  # 2
+print(max(numbers))  # 8
+print(sorted(numbers))  # [2, 4, 8]
+```
+
+Practice idea: write a function average(values) that returns sum(values) / len(values). Decide what it should do if the list is empty. 
+
+PYTHON BASICS • BEGINNER GUIDE 
+
+Page 5 of 6 
+
+## **5. Errors, Files, and Practice** 
+
+### **Handle errors** 
+
+```
+try:
+```
+
+```
+    value = int(input("Enter a whole number: "))
+    print(100 / value)
+except ValueError:
+```
+
+```
+    print("Please enter a valid integer.")
+except ZeroDivisionError:
+```
+
+```
+    print("The number must not be zero.")
+```
+
+Handle only errors you can respond to meaningfully. Avoid a bare except: because it can hide unexpected problems. During debugging, read the final line of a traceback first, then inspect the line number and surrounding code. 
+
+### **Read and write a text file** 
+
+```
+# Write text to a file
+with open("notes.txt", "w", encoding="utf-8") as file:
+    file.write("Python practice\n")
+```
+
+```
+# Read it back
+with open("notes.txt", "r", encoding="utf-8") as file:
+    contents = file.read()
+print(contents)
+```
+
+with closes the file automatically. Mode "w" writes and replaces existing contents; "r" reads; "a" appends. The file path is interpreted relative to the program’s working directory unless you provide a path. 
+
+### **Quick practice checklist** 
+
+I Create variables for your name, age, and favorite subject; print a sentence using them. 
+
+I Ask for two numbers and display their sum. Remember input() returns strings. 
+
+I Use if/else to report whether a number is positive, negative, or zero. 
+
+I Loop through a list of five values and print each value with its index. 
+
+I Write a function that returns the largest of three numbers; test several cases. 
+
+### **Core habits** 
+
+Use descriptive variable names, keep indentation consistent, test small pieces of code, and make one change at a time. Learn the basics by running and modifying examples—not just reading them. 
+
+Reference: Official Python tutorial — https://docs.python.org/3/tutorial/ 
+
+PYTHON BASICS • BEGINNER GUIDE 
+
+Page 6 of 6 
+
